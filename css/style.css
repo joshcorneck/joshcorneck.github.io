@@ -212,7 +212,12 @@ nav ul li a {
     text-align: justify;
 }
 
-.text-block .section-title {
+.text-block .section-title{
+    text-align: left;
+    margin-top: 0;
+}
+
+.text-block .section-subtitle{
     text-align: left;
     margin-top: 0;
 }
@@ -223,4 +228,17 @@ nav ul li a {
 
 p {
     margin-bottom: 1em; /* Adjust the value as needed */
+}
+
+.publications-item {
+    margin-bottom: 10px;
+}
+
+.publications-link {
+    color: #0004ff;
+    text-decoration: none;
+}
+
+.publications-link:hover {
+    text-decoration: underline;
 }
