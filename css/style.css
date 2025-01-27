@@ -1,3 +1,4 @@
+/* Existing base styles */
 body, h1, p {
     margin: 0;
     padding: 0;
@@ -11,13 +12,9 @@ body {
 /* Header Styles */
 header {
     width: 90%;
-    /* background: linear-gradient(to bottom, rgb(11, 12, 12),rgba(255, 255, 255, 0.5)); Set your header gradient */
-    /* background-color: #28292b;   */
-    color: #ffffff; /* White text color */
-    padding: 0 5%; /* Add some padding */
-    /* text-align: center; Center-align text */
+    color: #ffffff;
+    padding: 0 5%;
     align-items: center;
-    /* transition: background-color 0.5s ease; */
 }
 
 header h1 {
@@ -41,7 +38,6 @@ header div {
 }
 
 header:hover {
-    /* background: linear-gradient(to bottom, rgb(0, 81, 255),#979797);  */
     background-color: #0004ff;
     color: #ffffff;
 }
@@ -58,6 +54,7 @@ header:hover nav li a{
     color: #ffffff;
 }
 
+/* Navigation Styles */
 nav {
     width: 100%;
     color: #414141;
@@ -74,8 +71,8 @@ nav ul li a {
     color: #0004ff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.2s ease; /* Smooth color transition */
-    padding-bottom: 5px; /* Add some space for the underline effect */
+    transition: color 0.2s ease;
+    padding-bottom: 5px;
 }
 
 nav ul li a::before,
@@ -83,9 +80,9 @@ nav ul li a::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 3px; /* Thickness of the underline */
+    height: 3px;
     bottom: 0;
-    background-color: white; /* Color of the underline */
+    background-color: white;
     transition: width 0.2s ease;
 }
 
@@ -101,19 +98,7 @@ nav ul li a::after {
 
 nav ul li a:hover::before,
 nav ul li a:hover::after {
-    width: 50%; /* Extend the underline to 50% of the width */
-}
-
-
-
-nav {
-    width: 100%;
-    color: #414141;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 0;
+    width: 50%;
 }
 
 nav ul li {
@@ -122,60 +107,14 @@ nav ul li {
     margin: 10px 20px;
 }
 
-nav ul li a {
-    color: #0004ff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
 /* Main Content Styles */
-.hero-image img {
-    width: 50%;
-    border: 5px solid #000500; /* Green border for the image */
-    display: block; /* Center the image within its container */
-    margin: 0 auto; /* Center the image horizontally */
-}
-
-.text-block {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    font-size: 20px;
-    text-align: center;
-
-    /* background-color: #fff; */
-    /* border-radius: 10px; */
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-}
-
-.section-title {
-    text-align: center;
-    font-weight: bold;
-}
-
-/* Add your additional styles as needed */
-
-/* Add your CSS styles here for the photo section */
-.photo-section {
-    text-align: center;
-    margin-top: 50px; /* Add some space between header and photo */
-}
-
-.rounded-image {
-    border-radius: 50%; /* Create a circular border */
-    width: 250px; /* Adjust the width of the image */
-    height: 250px; /* Adjust the height of the image */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
-    border: 10px; /* Optional: Add a border around the image */
-}
-
-/* Flexbox Layout for Main Content */
 .main-container {
     display: flex;
     padding: 2em;
-    justify-content: center; /* Center content horizontally */
+    justify-content: center;
 }
 
+/* Profile and Contact Styles */
 .photo-contact-section {
     flex: 1;
     display: flex;
@@ -186,8 +125,8 @@ nav ul li a {
 
 .photo-contact-section img.rounded-image {
     border-radius: 50%;
-    width: 250px; /* Increased the width of the profile image */
-    height: 250px; /* Increased the height of the profile image */
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     margin-bottom: 1em;
 }
@@ -195,14 +134,15 @@ nav ul li a {
 .contact-info {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    font-size: 1.2em; /* Increased the font size of the contact info */
+    font-size: 1.2em;
 }
 
 .contact-link {
-    color: #0004ff; /* Set the color of contact links */
-    text-decoration: none; /* Remove underline from links */
+    color: #0004ff;
+    text-decoration: none;
 }
 
+/* Text Block Styles */
 .text-block {
     flex: 2;
     padding-left: 0em;
@@ -212,24 +152,23 @@ nav ul li a {
     text-align: justify;
 }
 
-.text-block .section-title{
+.text-block .section-title {
+    color: #0004ff;
     text-align: left;
     margin-top: 0;
 }
 
-.text-block .section-subtitle{
+.text-block .section-subtitle {
     text-align: left;
     margin-top: 0;
 }
 
 .text-block p {
     line-height: 1.6;
+    margin-bottom: 1em;
 }
 
-p {
-    margin-bottom: 1em; /* Adjust the value as needed */
-}
-
+/* Publications Styles */
 .publications-item {
     margin-bottom: 10px;
 }
@@ -241,4 +180,157 @@ p {
 
 .publications-link:hover {
     text-decoration: underline;
+}
+
+/* New Blog Styles */
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.blog-preview {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    transition: transform 0.2s;
+}
+
+.blog-preview:hover {
+    transform: translateX(10px);
+}
+
+.preview-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    color: #0004ff;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.preview-title:hover {
+    color: #0003cc;
+}
+
+.preview-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.preview-content {
+    margin-bottom: 20px;
+    color: #555;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-block;
+    color: #0004ff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.read-more:hover {
+    color: #0003cc;
+    text-decoration: underline;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #e1f0ff;
+    color: #0004ff;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Individual Blog Post Styles */
+.blog-post {
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+}
+
+.post-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    color: #0004ff;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.post-content {
+    font-size: 18px;
+    line-height: 1.8;
+    font-family: 'Roboto', sans-serif;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+}
+
+.post-content h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    margin: 30px 0 15px;
+    color: #0004ff;
+}
+
+.post-content h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    margin: 25px 0 15px;
+    color: #0004ff;
+}
+
+/* Math and Code Styling */
+.math-block {
+    overflow-x: auto;
+    padding: 15px 0;
+}
+
+pre {
+    background-color: #f6f8fa;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    
+    .text-block {
+        margin-right: 0;
+        padding-left: 0;
+    }
+    
+    .blog-preview {
+        padding: 20px;
+    }
+    
+    .post-title {
+        font-size: 28px;
+    }
 }

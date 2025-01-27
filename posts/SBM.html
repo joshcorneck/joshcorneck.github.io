@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua Corneck - Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bibtex-js@2.2.1/bibtex_js.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <h1>Joshua Corneck</h1>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../publications.html">Research</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="blog-container">
+            <div class="blog-post">
+                <h1 class="post-title">Stochastic Block Model</h1>
+                <p class="post-meta">Published on January 27, 2025</p>
+                <div class="post-content">
+                    <p>
+                        Consider a graph $\mathcal{G} = (\mathcal{V}, \mathcal{E})$ with vertex set $\mathcal{V} = \{1,\dots,N\}$ and edge set 
+                        $\mathcal{E} \subseteq \mathcal{V} \times \mathcal{V}$. The Stochastic Block Model (SBM) is a simple but fundamental 
+                        generative model for such a graph. At its core, the SBM assumes each node $i\in\mathcal{V}$ to belong to one of a finite number $K$ 
+                        <em>latent</em> groups or communities. The group membership of node $i\in\mathcal{V}$ is written $z_i$ with $z_i \in \{1,\dots,K\}$.
+                        In the simplest case, $K$ is known, but this need not be. These group or community memberships are assumed to be a priori
+                        identically and independently distributed, with each coming from a categorical distribution: 
+                        $$
+                        z_i \sim \mathrm{Categorical}(\pi), \quad \text{for } i \in \mathcal{V},
+                        $$
+                        where $\pi$ is some probability vector of length $K$, that is $\pi \in \Delta^{K-1}$.
+                    </p>
+                    <p>
+                        These communities govern the how the nodes of the graph will connect to one another. In particular, the model specifies a 
+                        $K \times K$ matris $\boldsymbol{\rho} = (\rho_{km}) \in [0,1]^{K \times K}$, where $\rho_{km}$ is the probability of a directed edge being
+                        formed from a node in community $k$ to a node in community $m$. In the undirected case, $\boldsymbol{\rho}$ must be symmetric. In particular, 
+                        edges for the adjaceny matrix of this graph $\boldsymbol{A} = (A_{ij}) \in \{0,1\}^{N \times N}$ are drawn from a Bernoulli distribution 
+                        as:
+                        $$
+                        A_{ij} \mid z_{i} = k, z_{j} = m \sim \mathrm{Bernoulli}(\rho_{km}), \quad \text{for all } i,j \in \mathcal{V}.
+                        $$
+                        Note that these draws are independent of one another conditional upon the communities of each node.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
