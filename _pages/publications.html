@@ -21,16 +21,73 @@ author_profile: true
       {% endif %}
       {% unless title_shown %}
         <h2>{{ category[1].title }}</h2><hr />
+        <ul class="pub-list">
         {% assign title_shown = true %}
       {% endunless %}
-      {% include archive-single.html %}
+        <li>
+          {% if post.citation %}
+            {{ post.citation }}
+          {% else %}
+            {{ post.title }}
+          {% endif %}
+          {% assign link_items = "" %}
+          {% if post.doiurl %}
+            {% assign link_items = link_items | append: '<a href="' | append: post.doiurl | append: '">paper <i class="ai ai-doi ai-fw" aria-hidden="true"></i></a>' %}
+          {% elsif post.paperurl %}
+            {% assign link_items = link_items | append: '<a href="' | append: post.paperurl | append: '">paper <i class="ai ai-doi ai-fw" aria-hidden="true"></i></a>' %}
+          {% endif %}
+          {% if post.arxivurl %}
+            {% if link_items != "" %}
+              {% assign link_items = link_items | append: ', ' %}
+            {% endif %}
+            {% assign link_items = link_items | append: '<a href="' | append: post.arxivurl | append: '">arXiv <i class="ai ai-arxiv ai-fw" aria-hidden="true"></i></a>' %}
+          {% endif %}
+          {% if post.codeurl %}
+            {% if link_items != "" %}
+              {% assign link_items = link_items | append: ', ' %}
+            {% endif %}
+            {% assign link_items = link_items | append: '<a href="' | append: post.codeurl | append: '">code <i class="fab fa-github" aria-hidden="true"></i></a>' %}
+          {% endif %}
+          {% if link_items != "" %}
+            ({{ link_items }})
+          {% endif %}
+        </li>
     {% endfor %}
+    {% if title_shown %}
+        </ul>
+    {% endif %}
   {% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+  <ul class="pub-list">
+    {% for post in site.publications reversed %}
+      <li>
+        {% if post.citation %}
+          {{ post.citation }}
+        {% else %}
+          {{ post.title }}
+        {% endif %}
+        {% assign link_items = "" %}
+        {% if post.doiurl %}
+          {% assign link_items = link_items | append: '<a href="' | append: post.doiurl | append: '">paper <i class="ai ai-doi ai-fw" aria-hidden="true"></i></a>' %}
+        {% elsif post.paperurl %}
+          {% assign link_items = link_items | append: '<a href="' | append: post.paperurl | append: '">paper <i class="ai ai-doi ai-fw" aria-hidden="true"></i></a>' %}
+        {% endif %}
+        {% if post.arxivurl %}
+          {% if link_items != "" %}
+            {% assign link_items = link_items | append: ', ' %}
+          {% endif %}
+          {% assign link_items = link_items | append: '<a href="' | append: post.arxivurl | append: '">arXiv <i class="ai ai-arxiv ai-fw" aria-hidden="true"></i></a>' %}
+        {% endif %}
+        {% if post.codeurl %}
+          {% if link_items != "" %}
+            {% assign link_items = link_items | append: ', ' %}
+          {% endif %}
+          {% assign link_items = link_items | append: '<a href="' | append: post.codeurl | append: '">code <i class="fab fa-github" aria-hidden="true"></i></a>' %}
+        {% endif %}
+        {% if link_items != "" %}
+          ({{ link_items }})
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
 {% endif %}
-
-
-

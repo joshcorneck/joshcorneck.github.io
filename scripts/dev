@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ ! -d "vendor/bundle" ]]; then
+  ruby -S bundle config set --local path 'vendor/bundle'
+  ruby -S bundle install
+fi
+
+ruby -S bundle exec jekyll serve -H localhost
