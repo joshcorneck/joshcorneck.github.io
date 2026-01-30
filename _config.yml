@@ -18,6 +18,7 @@ url                      : https://joshcorneck.github.io # The base hostname & p
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "joshcorneck/joshcorneck.github.io"
 masthead_title           : "Home"
+google_site_verification : "googleaeb7ad3d598a020a"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
