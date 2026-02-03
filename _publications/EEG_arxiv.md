@@ -10,7 +10,7 @@ paperurl: #
 arxivurl: "https://doi.org/10.48550/arXiv.2601.21752"
 doiurl: #
 codeurl: #
-citation: 'Moutonnet, N., <strong>Corneck, J.</strong>, Tobar, F., and Mandic, D. (2026), <i>Synthesizing epileptic seizures: Gaussian processes for EEG Generation</i>'
+citation: 'Moutonnet, N., <strong>Corneck, J.</strong>, Tobar, F., and Mandic, D. (2026), <i>Synthesizing epileptic seizures: Gaussian processes for EEG generation</i>'
 ---
 
 Optional fields you can add (uncomment if used):
