@@ -6,10 +6,10 @@ permalink: /publication/2026-01-01-sample-publication
 excerpt: "Short summary of the paper."
 date: 2026-01-01
 venue: "arXiv preprint"
-paperurl: #
+paperurl: # 
 arxivurl: "https://doi.org/10.48550/arXiv.2601.21752"
-doiurl: #
-codeurl: #
+doiurl: # 
+codeurl: # 
 citation: 'Moutonnet, N., <strong>Corneck, J.</strong>, Tobar, F., and Mandic, D. (2026), <i>Synthesizing epileptic seizures: Gaussian processes for EEG generation</i>'
 ---
 
